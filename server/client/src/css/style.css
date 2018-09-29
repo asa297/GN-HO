@@ -1,0 +1,109 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+.container_report {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.header_report {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_report_view {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container_search {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.datepicker_inboundINV {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search_inboundINV {
+  display: flex;
+  align-items: center;
+}
+
+.buttonAction_inboundINV {
+  display: flex;
+  justify-content: center;
+}
+
+.header_report_daily_cashbalance {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container_report_daily_cashbalance {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.container_report_daily_cashbalance {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.datepicker_report_daily_cashbalance {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.header_report_daily_com {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container_report_daily_com {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.container_report_daily_com {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.datepicker_report_daily_com {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.customer_upper {
+  width: 100%;
+  height: 30%;
+  border: 1px solid red;
+}
+
+.customer_lower {
+  width: 100%;
+  height: 70%;
+  border: 1px solid blue;
+}

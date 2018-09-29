@@ -1,0 +1,38 @@
+:local(.container) {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+:local(.viewReportINV) {
+  display: flex;
+  justify-content: center;
+}
+
+:local(.itemA) {
+  width: 100%;
+  height: 100%;
+  background: red;
+}
+
+:local(.itemB) {
+  width: 100%;
+  height: 100%;
+  background: blue;
+}
+
+:local(.viewReportINVHeader) {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+:local(.searchbar) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+:local(.headerReport) {
+  display: flex;
+  justify-content: space-between;
+}

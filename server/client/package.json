@@ -1,0 +1,49 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": {
+    "/auth/google": {
+      "target": "http://localhost:5000"
+    },
+    "/api/*": {
+      "target": "http://localhost:5000"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "jquery": "^2.1.1",
+    "lodash": "^4.17.10",
+    "materialize-css": "^1.0.0-rc.1",
+    "moment": "^2.22.1",
+    "namor": "^1.0.1",
+    "numeral": "^2.0.6",
+    "react": "^16.3.2",
+    "react-collapsible": "^2.2.0",
+    "react-csv": "^1.0.14",
+    "react-datepicker": "^1.5.0",
+    "react-dom": "^16.3.2",
+    "react-file-base64": "^1.0.3",
+    "react-https-redirect": "^1.0.10",
+    "react-modal": "^3.4.4",
+    "react-qr-reader": "^2.1.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-s-alert": "^1.4.1",
+    "react-scripts": "1.1.4",
+    "react-select": "^2.0.0-beta.2",
+    "react-table": "^6.8.6",
+    "react-to-print": "^1.0.17",
+    "react-toggle": "^4.0.2",
+    "react-widgets": "^4.2.6",
+    "redux": "^4.0.0",
+    "redux-form": "^7.3.0",
+    "redux-thunk": "^2.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
