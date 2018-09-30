@@ -1,21 +1,24 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Modal from "react-modal";
+import ReactToPrint from "react-to-print";
 import ModalStyle from "../../../../Style/JS/modalStyle";
 import { delete_ReportPO } from "../../../../actions";
 import { withRouter } from "react-router-dom";
 import CircularLoaderBlue from "../../../utils/CircularLoaderBlue";
+import ComponentToPrint from "../../ReportPrintService/PurchaseOrderPrint/TemplatePrint";
 
 class ButtonFooter extends Component {
   constructor(props) {
     super(props);
 
-    const { orderId } = props;
+    const { orderId, report_PO } = props;
 
     this.state = {
       modalIsOpen: false,
       orderId,
-      clickSubmit: false
+      clickSubmit: false,
+      report_PO
     };
   }
 
@@ -50,6 +53,13 @@ class ButtonFooter extends Component {
           >
             Are you sure to delete this?
           </h6>
+
+          <button
+            className="amber btn-flat right white-text"
+            onClick={() => this.closeModal()}
+          >
+            close
+          </button>
           <button
             className="red btn-flat right white-text"
             onClick={() => {
@@ -61,12 +71,6 @@ class ButtonFooter extends Component {
           >
             delete
           </button>
-          <button
-            className="amber btn-flat right white-text"
-            onClick={() => this.closeModal()}
-          >
-            close
-          </button>
         </Modal>
       </div>
     );
@@ -75,26 +79,50 @@ class ButtonFooter extends Component {
   renderButton() {
     return (
       <div>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          {this.state.clickSubmit ? (
+            <div style={{ marginTop: "30px" }}>
+              <CircularLoaderBlue />
+            </div>
+          ) : null}
+
+          <button
+            className="green btn-flat white-text right"
+            style={{ marginLeft: "10px", marginTop: "30px" }}
+            type="submit"
+          >
+            Save
+          </button>
+
           <button
             className="red btn-flat white-text left"
-            style={{ marginTop: "30px" }}
+            style={{ marginLeft: "10px", marginTop: "30px" }}
             type="button"
             onClick={() => this.openModal()}
           >
             Delete
           </button>
-          <div />
-          <div style={{ display: "flex", alignItems: "flex-end" }}>
-            {this.state.clickSubmit ? <CircularLoaderBlue /> : null}
-            <button
-              className="green btn-flat white-text right"
-              style={{ marginTop: "30px" }}
-              type="submit"
-            >
-              Save
-            </button>
-          </div>
+
+          <ReactToPrint
+            trigger={() => (
+              <button
+                className="blue darken-4 btn-flat white-text waves-effect waves-light"
+                style={{ marginLeft: "10px", marginTop: "30px" }}
+                type="button"
+              >
+                <i className="material-icons left">local_printshop</i>
+                Print
+              </button>
+            )}
+            content={() => this.componentRef}
+          />
+        </div>
+
+        <div style={{ display: "none" }}>
+          <ComponentToPrint
+            ref={el => (this.componentRef = el)}
+            print_value={this.state.report_PO}
+          />
         </div>
 
         {this.renderModal()}
