@@ -101,9 +101,10 @@ class ReportPOList extends Component {
               <div className={Report_PO_CSS.viewReportPO}>
                 <Link
                   to={{
-                    pathname: "/report/reportpo/view",
+                    pathname: `/report/reportpo/view/${row.value}`,
                     state: { orderId: row.value }
                   }}
+                  target="_blank"
                 >
                   <i className="tiny material-icons">content_paste</i>
                 </Link>

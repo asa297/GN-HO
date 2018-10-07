@@ -114,6 +114,11 @@ export default auth => {
             <Route exact path="/report/reportinv" component={ReportInventory} />
             <Route
               exact
+              path="/report/reportpo/view/:orderId"
+              component={ReportPOView}
+            />
+            <Route
+              exact
               path="/report/reportpo/view"
               component={ReportPOView}
             />
