@@ -83,7 +83,7 @@ class ItemEdit extends Component {
             <label>{label}</label>
             <input
               style={{ marginBottom: "5px" }}
-              value={this.state[key]}
+              value={this.state[name]}
               disabled
             />
           </div>

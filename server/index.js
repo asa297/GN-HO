@@ -19,7 +19,7 @@ require("./models/Branch");
 require("./models/DeliveryNote");
 require("./services/passport");
 
-mongoose.connect(keys.mongoURI);
+mongoose.connect(keys.mongoURI,);
 
 app.use(cors());
 
