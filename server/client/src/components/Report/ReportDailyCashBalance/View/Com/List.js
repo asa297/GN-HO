@@ -38,12 +38,22 @@ class List extends Component {
   }
 
   prepareExportData(value) {
-    const { index, RecordNameBy, Receivecash, Grandtotal, Changecash } = value;
+    const {
+      index,
+      RecordNameBy,
+      Receivecash,
+      Grandtotal,
+      Changecash,
+      Credit,
+      Creditcharge
+    } = value;
     return {
       "#": index,
       "Cashier Name": RecordNameBy,
-      "Receive Cash": Receivecash,
       "Grand Total": Grandtotal,
+      "Receive Cash": Receivecash,
+      Credit: Credit,
+      "Credit Charge": Creditcharge,
       Change: Changecash
     };
   }
@@ -65,16 +75,28 @@ class List extends Component {
             style: { textAlign: "center", fontWeight: "bold" }
           },
           {
+            Header: "Grandtotal",
+            accessor: "Grandtotal",
+            Cell: row => <div>{numeral(row.value).format("0,0.00")}</div>,
+            style: { textAlign: "center", color: "blue", fontWeight: "bold" }
+          },
+          {
             Header: "Receivecash",
             accessor: "Receivecash",
             Cell: row => <div>{numeral(row.value).format("0,0.00")}</div>,
             style: { textAlign: "center", color: "green", fontWeight: "bold" }
           },
           {
-            Header: "Grandtotal",
-            accessor: "Grandtotal",
+            Header: "Credit",
+            accessor: "Credit",
             Cell: row => <div>{numeral(row.value).format("0,0.00")}</div>,
-            style: { textAlign: "center", color: "blue", fontWeight: "bold" }
+            style: { textAlign: "center", color: "green", fontWeight: "bold" }
+          },
+          {
+            Header: "CreditCharge",
+            accessor: "Creditcharge",
+            Cell: row => <div>{numeral(row.value).format("0,0.00")}</div>,
+            style: { textAlign: "center", color: "green", fontWeight: "bold" }
           },
           {
             Header: "Change",
