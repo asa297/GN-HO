@@ -12,6 +12,7 @@ import reportDailyItemReducer from "./reportDailyItemReducer";
 import reportDailyCashBalanceReducer from "./reportDailyCashBalanceReducer";
 import reportDailyComReducer from "./reportDailyComReducer";
 import reportDelivereyNote from "./reportDelivereyNote";
+import noteReducer from "./noteReducer";
 
 export default combineReducers({
   auth: authReducer,
@@ -26,5 +27,6 @@ export default combineReducers({
   reports_daily_cashbalance: reportDailyCashBalanceReducer,
   report_daily_com: reportDailyComReducer,
   reports_deliverynote: reportDelivereyNote,
+  notes: noteReducer,
   form: reduxForm
 });

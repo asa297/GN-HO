@@ -29,6 +29,8 @@ import ReportDailyCommissionGroupViewDetail from "../components/Report/ReportDai
 import ReportDeliveryNote from "../components/Report/ReportDeliveryNote/Main";
 import ReportDeliveryNoteNew from "../components/Report/ReportDeliveryNote/NewReportDeliveryNote";
 import ReportDeliveryNoteView from "../components/Report/ReportDeliveryNote/ViewDocument";
+//Note
+import NoteNew from "../components/Note/NoteNew.js";
 
 export default auth => {
   if (!_.isNil(auth)) {
@@ -36,6 +38,7 @@ export default auth => {
       case 1:
         return (
           <div>
+            <Route exact path="/note/new" component={NoteNew} />
             <Route
               exact
               path="/report/reportdeliverynote/view"

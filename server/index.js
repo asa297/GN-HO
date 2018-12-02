@@ -17,9 +17,10 @@ require("./models/Order");
 require("./models/ItemElement");
 require("./models/Branch");
 require("./models/DeliveryNote");
+require("./models/Note");
 require("./services/passport");
 
-mongoose.connect(keys.mongoURI,);
+mongoose.connect(keys.mongoURI);
 
 app.use(cors());
 
@@ -43,6 +44,7 @@ require("./routes/OrderRoutes")(app);
 require("./routes/ItemElementRotues")(app);
 require("./routes/BranchRotues")(app);
 require("./routes/DeliveryNoteRotues")(app);
+require("./routes/NoteRoutes")(app);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
