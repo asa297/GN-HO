@@ -14,6 +14,7 @@ class App extends Component {
   }
 
   RenderMenuContentRoute() {
+    console.log(this.props.auth);
     return (
       <div>
         <Header />

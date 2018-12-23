@@ -31,6 +31,8 @@ import ReportDeliveryNoteNew from "../components/Report/ReportDeliveryNote/NewRe
 import ReportDeliveryNoteView from "../components/Report/ReportDeliveryNote/ViewDocument";
 //Note
 import NoteNew from "../components/Note/NoteNew.js";
+//Login
+import Login from "../components/Login";
 
 export default auth => {
   if (!_.isNil(auth)) {
@@ -135,9 +137,13 @@ export default auth => {
             <Route exact path="/" component={DefaultHome} />
           </div>
         );
-
-      default:
-        return <Route exact path="/" component={DefaultHome} />;
     }
+  } else {
+    return (
+      <div>
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/" component={DefaultHome} />
+      </div>
+    );
   }
 };
